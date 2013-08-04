@@ -1,0 +1,6 @@
+twitter-sample {
+  consumer-key = ""
+  consumer-secret = ""
+  request-token = ""
+  request-secret = ""
+}
