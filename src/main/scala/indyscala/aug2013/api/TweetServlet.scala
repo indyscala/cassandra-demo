@@ -22,7 +22,6 @@ class TweetServlet(service: ActorRef) extends ScalatraServlet with FutureSupport
   protected implicit val executor = scala.concurrent.ExecutionContext.global
   protected implicit val timeout: Timeout = 3.seconds
 
-  // In the real world, use Scalate for this.
   get("/status") {
     service ? GetCounters
   }

@@ -48,6 +48,7 @@ protected[service] class CybozuLangDetector extends Actor with Logging {
 
         case Failure(e) =>
           sender! IncrementCounter(Counter.CybozuErrors)
+          logger.error("Error detecting languge", e)
       }
   }
 }

@@ -17,7 +17,7 @@ class ScalatraBootstrap extends LifeCycle {
     super.init(context)
     system = ActorSystem()
     val service = system.actorOf(Props[TweetService].withRouter(RoundRobinRouter(nrOfInstances = 5)))
-    TwitterSample { service ! ParseTweet(_) }
+    TwitterSample { json => service ! ParseTweet(json) }
     context.mount(new TweetServlet(service), "/*")
   }
 
